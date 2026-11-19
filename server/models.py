@@ -46,7 +46,7 @@ class Meeting(db.Model):
     scheduled_time = db.Column(db.DateTime)
     location = db.Column(db.String)
 
-    # Relationship mapping the meetingh to related employees
+    # Relationship mapping the meetings to related employees
     employees = db.relationship('Employee', secondary=employee_meetings, back_populates='meetings')
 
     def __repr__(self):
